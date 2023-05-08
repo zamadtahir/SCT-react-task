@@ -2,20 +2,21 @@
 /*Variables*/
 $primary: #1271FF;
 $yellow: #F0B90B;
-$tab:768px;
+$tablet:900px;
 $mobile:600px;
 
 /**************************************/
+@media (min-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+}
 @media (min-width: 1400px) {
   .container {
     max-width: 1600px;
   }
 }
-@media (min-width: $tab) {
-  .container {
-    max-width: 100%;
-  }
-}
+
 
 /**************************************/
 .layout {
@@ -44,7 +45,7 @@ $mobile:600px;
       align-self: stretch;
       gap: 5px;
       margin-left: 50px;
-      @media (max-width:$tab) {
+      @media (max-width:$tablet) {
         display: none;
       }
       a {
@@ -71,8 +72,29 @@ $mobile:600px;
       margin-left: auto;
       display: flex;
       gap: 15px;
-      @media (max-width:$tab) {
+      @media (max-width:$tablet) {
         display: none;
+      }
+    }
+    &--hamburger-icon{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: auto;
+     cursor: pointer;
+     @media (min-width:900px) {
+      display: none;
+     }
+      span{
+        width: 45px;
+        height: 3px;
+        background: #fff;
+        border-radius: 50px;
+        display: block;
+        &:nth-child(2){
+          width: 30px;
+          margin-left: auto;
+        }
       }
     }
   }
@@ -85,37 +107,68 @@ $mobile:600px;
   height: 100%;
   overflow: hidden;
   position: relative;
-
-  &__background {
-    position: absolute;
+  background: #000;
+  &__backgrounds {
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-
-    &.landscape {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media (max-width: $tablet) {
+      height: 800px;
+    }
+    @media (max-width: $mobile) {
+      height: 400px;
+    }
+    &::before{
+      content: '';
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000 100%);
+      mix-blend-mode: multiply;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 9;
+    }
+    &--image{
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+    .landscape {
       background-image: url('../public/assets/images/background-landscape.png');
       z-index: 1;
     }
 
-    &.rocks {
+    .rocks {
       background-image: url('../public/assets/images/background-rocks.png');
       z-index: 2;
     }
-  }
-
-  &__characters {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 800px;
-    height: 500px;
-
-    &.cartoon {
+    
+    .cartoon {
       background-image: url('../public/assets/images/cartoon-characters-1.png');
-      background-repeat: no-repeat;
       background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 600px !important;
+      height: 75%;
+      right: 6%;
+      bottom: 0;
       z-index: 3;
+      @media (max-width: $tablet) {
+        width: 300px !important;
+     
+      }
     }
   }
 
@@ -125,7 +178,10 @@ $mobile:600px;
     height: 100%;
     z-index: 4;
     position: relative;
-
+    padding-top: 20vh;
+    @media (max-width: $mobile) {
+      padding-top: 32vh;
+    }
     &--title {
       font-family: 'Passion One', cursive;
       font-weight: 700;
@@ -133,7 +189,10 @@ $mobile:600px;
       line-height: 80px;
       color: #fff;
       margin-bottom: 15px;
-
+      @media (max-width:$tablet) {
+        font-size: 40px;
+        line-height: 40px;
+      }
       @media (max-width:$mobile) {
         font-size: 30px;
         line-height: 36px;
@@ -141,12 +200,20 @@ $mobile:600px;
     }
 
     &--desp {
+      letter-spacing: 1px;
       font-family: 'Urbanist', sans-serif;
       font-weight: 400;
       font-size: 18px;
       line-height: 27px;
       color: #fff;
       margin-bottom: 40px;
+      @media (max-width:$tablet) {
+        font-size: 14px;
+        line-height: 21px;
+      }
+      @media (max-width:$mobile) {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -158,9 +225,12 @@ $mobile:600px;
   border-radius: 25px;
   color: #fff;
   padding: 25px 35px;
-
+  @media (max-width:$tablet) {
+    margin-top: 150px;
+  }
   @media (max-width:$mobile) {
     padding: 20px 15px;
+    margin-top: 0px;
   }
 
   h2 {
@@ -170,7 +240,10 @@ $mobile:600px;
     line-height: 40px;
     letter-spacing: 1px;
     margin: 0;
-
+    @media (max-width:$tablet) {
+      font-size: 24px;
+      line-height: 26px;
+    }
     @media (max-width:$mobile) {
       font-size: 20px;
       line-height: 24px;
@@ -221,7 +294,9 @@ $mobile:600px;
     font-size: 20px;
     letter-spacing: 1px;
     padding: 10px 45px;
-
+    @media (max-width:$tablet) {
+      font-size: 18px;
+    }
     span {
       color: $yellow;
     }
@@ -232,7 +307,9 @@ $mobile:600px;
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 1px;
-
+    @media (max-width:$tablet) {
+      font-size: 18px;
+    }
     span {
       color: $primary;
     }
