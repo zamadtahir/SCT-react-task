@@ -1,0 +1,280 @@
+/**************************************/
+/*Variables*/
+$primary: #1271FF;
+$yellow: #F0B90B;
+$tab:768px;
+$mobile:600px;
+
+/**************************************/
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+@media (min-width: $tab) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/**************************************/
+.layout {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(17, 17, 21, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9;
+
+    &--container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    &--navmenu {
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+      gap: 5px;
+      margin-left: 50px;
+      @media (max-width:$tab) {
+        display: none;
+      }
+      a {
+        color: #fff;
+        font-family: 'Urbanist', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 5px 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-top: 2px solid transparent;
+
+        &.active,
+        &:hover {
+          border-color: $primary;
+        }
+      }
+
+    }
+
+    &--action-btns{
+      margin-left: auto;
+      display: flex;
+      gap: 15px;
+      @media (max-width:$tab) {
+        display: none;
+      }
+    }
+  }
+
+}
+
+/**************************************/
+.banner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &__background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &.landscape {
+      background-image: url('../public/assets/images/background-landscape.png');
+      z-index: 1;
+    }
+
+    &.rocks {
+      background-image: url('../public/assets/images/background-rocks.png');
+      z-index: 2;
+    }
+  }
+
+  &__characters {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 800px;
+    height: 500px;
+
+    &.cartoon {
+      background-image: url('../public/assets/images/cartoon-characters-1.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 3;
+    }
+  }
+
+  &__content {
+    // background: linear-gradient(180deg, rgba(10, 10, 12, 0.0086472) 6.1%, #0A0A0C 91.55%), linear-gradient(180deg, rgba(10, 10, 12, 0.0086472) 6.1%, #0A0A0C 91.55%);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    position: relative;
+
+    &--title {
+      font-family: 'Passion One', cursive;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 80px;
+      color: #fff;
+      margin-bottom: 15px;
+
+      @media (max-width:$mobile) {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+
+    &--desp {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+/**************************************/
+.wallet {
+  background: rgba(17, 17, 21, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  color: #fff;
+  padding: 25px 35px;
+
+  @media (max-width:$mobile) {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-family: 'Passion One', cursive;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin: 0;
+
+    @media (max-width:$mobile) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__progress-bar {
+    position: relative;
+    width: 100%;
+    background: #0A0A0C;
+    border-radius: 15px;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    @media (max-width:$mobile) {
+      font-size: 16px;
+    }
+
+    &--value {
+      font-family: "Passion One", cursive;
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: 1px;
+      margin: 0;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translate(0%, -50%);
+
+      @media (max-width:$mobile) {
+        font-size: 16px;
+      }
+    }
+
+    &--fill {
+      background: linear-gradient(270deg, #1271FF 17.9%, #5691E9 91.2%);
+      height: 100%;
+      border-radius: 15px;
+    }
+  }
+
+  &__token-sold {
+    background: #0A0A0C;
+    border-radius: 15px;
+    font-family: "Passion One", cursive;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 10px 45px;
+
+    span {
+      color: $yellow;
+    }
+  }
+
+  &__token-remaining {
+    font-family: "Passion One", cursive;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    span {
+      color: $primary;
+    }
+  }
+
+
+  .stage-price {
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 14px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+/**************************************/
+.btn {
+  height: 46px;
+  font-size: 20px;
+  border-radius: 12px;
+  letter-spacing: 2px;
+  padding: 6px 15px;
+  width: 190px;
+  font-family: 'Passion One', cursive;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: $primary;
+  border-color: $primary;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  background: transparent;
+  border-color: $primary;
+  color: #fff;
+}
+
+/**************************************/
