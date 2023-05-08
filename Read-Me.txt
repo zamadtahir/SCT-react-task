@@ -1,0 +1,18 @@
+clone application
+git clone https://github.com/zamadtahir/sct-react-task.git
+
+install node_modules
+npm i
+
+run react apploication
+npm start
+
+add metamask extension in browser
+then click on [Connect Wallet] button from header
+if metamask wallect is connected u fill see alert box with your wallet address and 
+wallet balance and if not connected u will see alert box with the metamask not connect message 
+
+Application is responsive on tablet and mobile devices i have attached the screen shots
+
+
+	
