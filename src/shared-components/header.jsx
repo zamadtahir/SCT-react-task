@@ -1,3 +1,5 @@
+import Styles from './header.module.scss'
+
 const Header = () =>{
     
     const shoot = () => {
@@ -18,11 +20,11 @@ const Header = () =>{
           } 
       }
     return(
-        <div className="layout__header">
+        <div className={Styles.header}>
              <div className="container h-100">
-                <div className="layout__header--container">
+                <div className={Styles.header__container}>
                     <img src={process.env.PUBLIC_URL + "/assets/images/logo.svg"} alt="" />
-                    <div className="layout__header--navmenu">
+                    <div className={Styles.header__navmenu}>
                         <a href="">Intro Video</a>
                         <a href="" className="active">Referral Program</a>
                         <a href="">Buy now</a>
@@ -31,17 +33,16 @@ const Header = () =>{
                         <a href="">how to buy</a>
                         <a href="">how to buy</a>
                     </div>
-                    <div className="layout__header--action-btns">
+                    <div className={Styles.header__actionbtns}>
                         <button className="btn btn-outline-primary" onClick={shoot}>Connect wallet</button>
                         <button className="btn btn-primary">JOIN PRESALE</button>
                     </div>
-                    <div className="layout__header--hamburger-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div className={Styles.header__hamburgericon}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
-             
              </div>
         </div>
     )

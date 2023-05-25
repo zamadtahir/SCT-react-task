@@ -1,0 +1,88 @@
+@import "/public/assets/styles/variables.scss";
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 87px;
+    background: rgba(17, 17, 21, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 99999;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__navmenu {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        gap: 5px;
+        margin-left: 50px;
+
+        @media (max-width:$tablet) {
+            display: none;
+        }
+
+        a {
+            color: #fff;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 5px 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-top: 2px solid transparent;
+
+            @media (max-width:1450px) {
+                font-size: 12px;
+                padding: 5px 5px;
+            }
+
+            &.active,
+            &:hover {
+                border-color: $primary;
+            }
+        }
+
+    }
+
+    &__actionbtns {
+        margin-left: auto;
+        display: flex;
+        gap: 15px;
+
+        @media (max-width:$tablet) {
+            display: none;
+        }
+    }
+
+    &__hamburgericon {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: auto;
+        cursor: pointer;
+
+        @media (min-width:900px) {
+            display: none;
+        }
+
+        span {
+            width: 45px;
+            height: 3px;
+            background: #fff;
+            border-radius: 50px;
+            display: block;
+
+            &:nth-child(2) {
+                width: 30px;
+                margin-left: auto;
+            }
+        }
+    }
+}

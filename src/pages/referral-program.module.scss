@@ -1,0 +1,272 @@
+@import "/public/assets/styles/variables.scss";
+
+/**************************************/
+.banner {
+    width: 100%;
+    height: 961px;
+    overflow: hidden;
+    position: relative;
+    background: #151515;
+
+    &__backgrounds {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media (max-width: $tablet) {
+            height: 800px;
+        }
+
+        @media (max-width: $mobile) {
+            height: 400px;
+        }
+
+        &::before {
+            content: '';
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #1E1E1E 100%);
+            mix-blend-mode: multiply;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 9;
+        }
+
+        &__image {
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+
+            &__landscape {
+                background-image: url('../../public/assets/images/background-landscape.png');
+                z-index: 1;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            }
+
+            &__rocks {
+                background-image: url('../../public/assets/images/background-rocks.png');
+                z-index: 2;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            }
+
+            &__cartoon {
+                background-image: url('../../public/assets/images/cartoon-characters-1.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: 3;
+                position: absolute;
+                width: 600px !important;
+                height: 75%;
+                right: 6%;
+                bottom: 0;
+
+
+                @media (max-width: $tablet) {
+                    width: 300px !important;
+                }
+
+                @media (max-width: $mobile) {
+                    right: -6px;
+                }
+            }
+        }
+    }
+
+    &__content {
+        // background: linear-gradient(180deg, rgba(10, 10, 12, 0.0086472) 6.1%, #0A0A0C 91.55%), linear-gradient(180deg, rgba(10, 10, 12, 0.0086472) 6.1%, #0A0A0C 91.55%);
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        position: relative;
+        padding-top: 200px;
+
+        @media (max-width: $tablet) {
+            padding-top: 250px;
+        }
+
+        @media (max-width: $mobile) {
+            padding-top: 250px;
+        }
+
+        &__title {
+            font-family: 'Passion One', cursive;
+            font-weight: 700;
+            font-size: 80px;
+            line-height: 80px;
+            color: #fff;
+            margin-bottom: 15px;
+
+            @media (max-width:$tablet) {
+                font-size: 40px;
+                line-height: 40px;
+            }
+
+            @media (max-width:$mobile) {
+                font-size: 30px;
+                line-height: 36px;
+            }
+        }
+
+        &__desp {
+            letter-spacing: 1px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            color: #fff;
+            margin-bottom: 40px;
+
+            @media (max-width:$tablet) {
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            @media (max-width:$mobile) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+/**************************************/
+.wallet {
+    background: rgba(17, 17, 21, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    color: #fff;
+    padding: 25px 35px;
+
+    @media (max-width:$tablet) {
+        margin-top: 150px;
+    }
+
+    @media (max-width:$mobile) {
+        padding: 20px 15px;
+        margin-top: 0px;
+    }
+
+    h2 {
+        font-family: 'Passion One', cursive;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: 1px;
+        margin: 0;
+
+        @media (max-width:$tablet) {
+            font-size: 24px;
+            line-height: 26px;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    &__progressbar {
+        position: relative;
+        width: 100%;
+        background: #0A0A0C;
+        border-radius: 15px;
+        height: 50px;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        @media (max-width:$mobile) {
+            font-size: 16px;
+        }
+
+        &__value {
+            font-family: "Passion One", cursive;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin: 0;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translate(0%, -50%);
+
+            @media (max-width:$mobile) {
+                font-size: 16px;
+            }
+        }
+
+        &__fill {
+            background: linear-gradient(270deg, #1271FF 17.9%, #5691E9 91.2%);
+            height: 100%;
+            border-radius: 15px;
+        }
+    }
+
+    &__token-sold {
+        background: #0A0A0C;
+        border-radius: 15px;
+        font-family: "Passion One", cursive;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 10px 45px;
+
+        @media (max-width:$tablet) {
+            font-size: 18px;
+        }
+
+        span {
+            color: $yellow;
+        }
+    }
+
+    &__token-remaining {
+        font-family: "Passion One", cursive;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        @media (max-width:$tablet) {
+            font-size: 18px;
+        }
+
+        span {
+            color: $primary;
+        }
+    }
+
+
+    .stage-price {
+        margin: 0;
+        font-family: 'Urbanist', sans-serif;
+        font-weight: 400;
+        color: #fff;
+        font-size: 14px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}
+/**************************************/
